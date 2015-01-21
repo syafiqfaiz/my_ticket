@@ -5,7 +5,8 @@ class EventsController < ApplicationController
 
 	def create
 		@event = Event.create(event_params)
-		@event.owner_id = session[:id]
+		@event.owner_id = session[:user_id]
+		
 		if @event.save
 			redirect_to events_path
 		else
