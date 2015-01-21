@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :tickets
+
   #user login
   get 'session/new'
   #user logout
@@ -11,8 +13,9 @@ Rails.application.routes.draw do
 
   #root url
   root "generals#index"
-
+  
   resources :events
+
 
   resources :users
 

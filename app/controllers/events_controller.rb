@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 	def create
 		@event = Event.create(event_params)
 		@event.owner_id = session[:user_id]
-		
+
 		if @event.save
 			redirect_to events_path
 		else
@@ -16,6 +16,10 @@ class EventsController < ApplicationController
 
 	def index
 		@events = Event.all
+	end
+
+	def show
+		@event = Event.find(params[:id])
 	end
 
 	private
