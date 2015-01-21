@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  #user login
+  get 'session/new'
+  #user logout
+  get 'session/destroy'
+
   #user sign up
   get "sign_up" => "users#new"
 
